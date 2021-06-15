@@ -12,6 +12,12 @@ const Input = () => {
                     Taxa do Estado
                     <input type="number" name="taxa" placeholder="0%"/>
                 </label>
+                <div>
+                    Tipo de compra
+                    <input type="radio" value="Cash" name="cash" /> Dinheiro
+                    <input type="radio" value="Credit-card" name="credit-card" /> Cartão de crédito
+                </div>
+                <input type="submit" value="Enviar" />
             </form>
         </div>
     )
