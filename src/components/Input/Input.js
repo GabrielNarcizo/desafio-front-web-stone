@@ -1,25 +1,39 @@
 import React from 'react'
+import { Div, RadioBtnDiv, InputStyle, Label} from './Input.style'
 
 const Input = () => {
     return (
-        <div>
+        <>
+            <Div>
             <form>
-                <label>
-                    Dólar
-                    <input type="number" name="dolar" placeholder="$ 1.00" />
-                </label>
-                <label>
-                    Taxa do Estado
-                    <input type="number" name="taxa" placeholder="0%"/>
-                </label>
                 <div>
-                    Tipo de compra
-                    <input type="radio" value="Cash" name="cash" /> Dinheiro
-                    <input type="radio" value="Credit-card" name="credit-card" /> Cartão de crédito
+                <Label>
+                    <p>Dólar</p>
+                    <InputStyle type="number" name="dolar" placeholder="$ 1.00" />
+                </Label>
+                <Label>
+                    <p>Taxa do Estado</p>
+                    <InputStyle type="number" name="taxa" placeholder="0%"/>
+                </Label>
                 </div>
+                
+                <RadioBtnDiv>
+                    <p>Tipo de compra</p>
+                    <div>
+                    <input type="radio" value="Cash" name="cash" id="cash"/> 
+                    <label for="cash">
+                    Dinheiro
+                    </label>
+                    <input type="radio" value="Credit-card" name="credit-card" id="credit-card"/>
+                    <label for="credit-card"> 
+                    Cartão
+                    </label>
+                    </div>
+                </RadioBtnDiv>
                 <input type="submit" value="Enviar" />
             </form>
-        </div>
+            </Div>
+        </>
     )
 }
 
