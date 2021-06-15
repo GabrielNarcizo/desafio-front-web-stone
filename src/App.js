@@ -1,9 +1,12 @@
 import React from 'react'
+import useFetch from './hooks/useFetch'
 
 const App = () => {
+  const coins = useFetch();
+
   return (
     <div>
-      <h1>Desafio Stone</h1>
+      <h1>R$ {coins.low} </h1>
     </div>
   )
 }
