@@ -1,5 +1,5 @@
 import React from 'react'
-import { Div, RadioBtnDiv, InputStyle, Label} from './Input.style'
+import { Div, RadioBtnDiv, InputStyle, Label, InputBtn} from './Input.style'
 
 const Input = () => {
     return (
@@ -30,7 +30,7 @@ const Input = () => {
                     </label>
                     </div>
                 </RadioBtnDiv>
-                <input type="submit" value="Enviar" />
+                <InputBtn type="submit" value="Converter" />
             </form>
             </Div>
         </>
