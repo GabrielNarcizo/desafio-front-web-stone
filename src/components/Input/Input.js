@@ -51,7 +51,7 @@ const Input = () => {
                     </label>
                     </div>
                 </RadioBtnDiv>
-                <Btn><BsArrowLeftRight />Converter</Btn>
+                <Btn><BsArrowLeftRight /><p>Converter</p> </Btn>
             </form>
             </Div>
         </>
