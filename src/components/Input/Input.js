@@ -1,27 +1,15 @@
-import React, { useState } from 'react'
-import { Div, RadioBtnDiv, InputStyle, Label, InputBtn} from './Input.style'
-import useFetch from '../../hooks/useFetch';
+import React, { useEffect } from 'react'
+import { Div, RadioBtnDiv, InputStyle, Label} from './Input.style'
+import useFetch from '../../hooks/useFetch'
+import { Btn } from '../Button/Button.style';
 
 const Input = () => {
     
-    const coins = useFetch();
+    const {setDolar, getCoins, setCash, onSubmit, setTax, setCreditCard, result} = useFetch()
 
-    const [dolar, setDolar] = useState(0)
-    const [tax, setTax] = useState(0)
-    const [result, setResult] = useState(0)
-
-    const [cash, setCash] = useState()
-    const [creditCard, setCreditCard] = useState()
-
-    const onSubmit = (e) =>{
-            e.preventDefault();
-
-            if(cash) {
-                setResult(((parseFloat(dolar) + parseFloat(tax)) * (parseFloat(coins.low) + parseFloat(1.1))).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }))
-            } else if(creditCard) {
-                setResult((((parseFloat(dolar) + parseFloat(tax)) + parseFloat(6.4)) * parseFloat(coins.low)).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }))
-            } 
-    }
+    useEffect(() => {
+        getCoins();
+      }, [getCoins]);
 
     return (
         <>
@@ -59,7 +47,7 @@ const Input = () => {
                     </label>
                     </div>
                 </RadioBtnDiv>
-                <InputBtn type="submit" />
+                <Btn>Converter</Btn>
             </form>
             <p>{result}</p>
             </Div>
