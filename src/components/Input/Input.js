@@ -2,10 +2,12 @@ import React, { useEffect } from 'react'
 import { Div, RadioBtnDiv, InputStyle, Label} from './Input.style'
 import useFetch from '../../hooks/useFetch'
 import { Btn } from '../Button/Button.style';
+import { BsArrowLeftRight } from "react-icons/bs";
+
 
 const Input = () => {
     
-    const {setDolar, getCoins, setCash, onSubmit, setTax, setCreditCard, result} = useFetch()
+    const {setDolar, getCoins, setCash, onSubmit, setTax, setCreditCard, result, tax} = useFetch()
 
     useEffect(() => {
         getCoins();
@@ -31,14 +33,16 @@ const Input = () => {
                     <div>
                     <input 
                     type="radio" 
+                    value="dinheiro"
                     onChange={ e => setCash(e.target.value)}
-                    name="option" 
+                    name="option"
                     id="cash"/> 
                     <label htmlFor="cash">
                     Dinheiro
                     </label>
                     <input 
-                    type="radio" 
+                    type="radio"
+                    value="cartão" 
                     onChange={ e => setCreditCard(e.target.value)}
                     name="option" 
                     id="credit-card"/>
@@ -47,9 +51,8 @@ const Input = () => {
                     </label>
                     </div>
                 </RadioBtnDiv>
-                <Btn>Converter</Btn>
+                <Btn><BsArrowLeftRight />Converter</Btn>
             </form>
-            <p>{result}</p>
             </Div>
         </>
     )

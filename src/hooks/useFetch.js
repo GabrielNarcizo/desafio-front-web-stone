@@ -1,5 +1,6 @@
 import React from 'react'
 import { createContext, useCallback, useContext, useState } from "react";
+import { useHistory } from 'react-router';
 
 const FetchContext = createContext({});
 
@@ -14,7 +15,8 @@ export const FetchProvider = ({children}) => {
     const [cash, setCash] = useState()
     const [creditCard, setCreditCard] = useState()
 
-    
+    const history = useHistory();
+
     const getCoins = useCallback(async () => {
         const response = await fetch('https://economia.awesomeapi.com.br/last/USD-BRL');
         const data = await response.json()
@@ -25,15 +27,19 @@ export const FetchProvider = ({children}) => {
         e.preventDefault();
 
         if(cash) {
-            setResult(((parseFloat(dolar) + parseFloat(tax)) * (parseFloat(coins.low) + parseFloat(1.1))).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }))
+            setResult((((parseFloat(dolar) + parseFloat(dolar *  parseFloat(tax / 100)))) * (parseFloat(coins.bid) + parseFloat(coins.bid * 0.011))).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }))
         } else if(creditCard) {
-            setResult((((parseFloat(dolar) + parseFloat(tax)) + parseFloat(6.4)) * parseFloat(coins.low)).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }))
-        } 
+            setResult((((parseFloat(dolar) + parseFloat(dolar *  parseFloat(tax / 100))) * parseFloat(coins.bid))  + parseFloat(coins.bid * 0.064)).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }))
+        }
+
+        history.push("/results")
     }
 
     const setCurrentResults = useCallback((current) => {
         setCurrent(current);
       }, []);
+
+
 
     return (
         <FetchContext.Provider
@@ -49,7 +55,9 @@ export const FetchProvider = ({children}) => {
                 setCreditCard,
                 onSubmit,
                 setCurrentResults,
-                getCoins
+                getCoins,
+                dolar,
+                tax
             }}
             >
             {children}

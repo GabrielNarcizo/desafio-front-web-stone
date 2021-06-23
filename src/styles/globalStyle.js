@@ -7,9 +7,8 @@ const GlobalStyle = createGlobalStyle`
   box-sizing: border-box;
   text-decoration: none;
   list-style: none;
-  /* background-color: #ffffff; */
   border: none;
-
+  font-family: 'Roboto', sans-serif;
 }
 
   sub, sup {

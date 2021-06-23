@@ -16,7 +16,6 @@ export const Container = styled.div`
     
     h1{
         color: #45505E;
-        font-family: 'Roboto', sans-serif;
         font-weight: 500;
         font-style: normal;
         font-size: 18px;
