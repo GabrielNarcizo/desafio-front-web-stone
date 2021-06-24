@@ -4,6 +4,9 @@ export const Div = styled.div`
     display: flex;
     flex-direction: column;
     
+        p {
+                font-weight: bold;
+            }
 
     form{
         

@@ -12,12 +12,23 @@ export const FetchProvider = ({children}) => {
     const [tax, setTax] = useState(0)
     const [result, setResult] = useState(0)
 
-    const [value, setValue] = useState()
+    const [value, setValue] = useState(0)
+    const [id, setId] = useState("")
 
     const history = useHistory();
 
-    const taxCash = parseFloat(1.1);
-    const taxCard = parseFloat(6.4);
+    const bidDolar = coins.bid
+
+    //Cálculo do valor final da compra em real(R$)
+    const taxState = parseFloat((dolar * tax) / 100)
+    const taxIOF = parseFloat((bidDolar * value) / 100)
+    const calcCash = (parseFloat(dolar) + parseFloat(taxState))
+    const calcCash2 = (parseFloat(bidDolar) + parseFloat(taxIOF))
+    const calcCashResult = (calcCash * calcCash2).toFixed(2)
+
+    const calcCard = ((parseFloat(dolar) + parseFloat(taxState)) * parseFloat(bidDolar))
+    const calcCard2 = parseFloat(taxIOF)
+    const calcCardResult = (calcCard + calcCard2).toFixed(2)
 
     //Chamada para a API
     const getCoins = useCallback(async () => {
@@ -26,14 +37,15 @@ export const FetchProvider = ({children}) => {
         setCoins(data.USDBRL)
     },[])
 
-    //Cálculo do valor final da compra em real(R$)
+    
     const onSubmit = (e) =>{
+
         e.preventDefault();
 
-        if(value === "dinheiro") {
-            setResult((((parseFloat(dolar) + parseFloat(dolar *  parseFloat(tax / 100)))) * (parseFloat(coins.bid) + parseFloat(coins.bid * (taxCash / 100)))).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }))
-        } else if( value === "cartão") {
-            setResult((((parseFloat(dolar) + parseFloat(dolar *  parseFloat(tax / 100))) * parseFloat(coins.bid))  + parseFloat(coins.bid * (taxCard / 100))).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }))
+        if( value === '1.1') {
+           setResult(calcCashResult)
+        } else if( value === '6.4') {
+           setResult(calcCardResult)
         }
 
         history.push("/results")
@@ -59,11 +71,12 @@ export const FetchProvider = ({children}) => {
                 getCoins,
                 dolar,
                 tax,
-                taxCash,
-                taxCard,
                 setResult,
                 value,
                 setValue,
+                setId,
+                bidDolar,
+                id
             }}
             >
             {children}

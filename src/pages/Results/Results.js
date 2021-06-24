@@ -16,10 +16,6 @@ const Results = () => {
     const history = useHistory();
     const navigateTo = (path) => history.push(path);
 
-    const pFloat = (data) => {
-        return parseFloat(data).toFixed(2).replace(".", ",");
-      };
-
     return (
         <Div>
             <DivLogo>
@@ -32,14 +28,12 @@ const Results = () => {
                     navigateTo("/")
                   }}><BsArrowLeft /><p>Voltar</p></button>
             <h3>O resultado do cálculo é: </h3>
-            <h1>{context.result}</h1>
-            <p>Cotação do dólar: $1,00 = R$ {pFloat(context.coins.bid)} </p>
-            <p>Compra no {context.value}</p>
-            <p>Total em dólar sem imposto $ {pFloat(context.dolar)} </p>
-            <p>Total em dólar com imposto $ {pFloat(context.result / context.coins.bid)}</p>
-            <p>Total em real sem imposto R$ {pFloat(context.dolar * context.coins.bid)}</p>
-            <p>Taxa dinheiro é de 1,1%</p>
-            <p>Taxa cartão é de 6,4%</p>
+            <h1>R$ {context.result}</h1>
+            <p>Cotação do dólar: $1,00 = R$ {parseFloat(context.coins.bid)} </p>
+            <p>Compra no {context.id} e taxa de {context.value}%</p>
+            <p>Total em dólar sem imposto $ {parseFloat(context.dolar).toFixed(2).replace(".",",")} </p>
+            <p>Total em dólar com imposto $ {(context.result / context.coins.bid).toFixed(2)} </p>
+            <p>Total em real sem imposto R$ {parseFloat(context.dolar * context.coins.bid).toFixed(2).replace(".",",")}</p>
             </DivResults>
             </Container>
         </Div>
