@@ -7,7 +7,7 @@ import { BsArrowLeftRight } from "react-icons/bs";
 
 const Input = () => {
     
-    const {setDolar, getCoins, setCash, onSubmit, setTax, setCreditCard, result, tax} = useFetch()
+    const {setDolar, getCoins, onSubmit, setTax, setValue} = useFetch()
 
     useEffect(() => {
         getCoins();
@@ -34,7 +34,7 @@ const Input = () => {
                     <input 
                     type="radio" 
                     value="dinheiro"
-                    onChange={ e => setCash(e.target.value)}
+                    onChange={ e => setValue(e.target.value)}
                     name="option"
                     id="cash"/> 
                     <label htmlFor="cash">
@@ -43,7 +43,7 @@ const Input = () => {
                     <input 
                     type="radio"
                     value="cartão" 
-                    onChange={ e => setCreditCard(e.target.value)}
+                    onChange={ e => setValue(e.target.value)}
                     name="option" 
                     id="credit-card"/>
                     <label htmlFor="credit-card"> 

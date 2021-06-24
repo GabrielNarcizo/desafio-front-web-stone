@@ -5,36 +5,41 @@ import { useHistory } from 'react-router';
 const FetchContext = createContext({});
 
 export const FetchProvider = ({children}) => {
-    const [coins, setCoins] = useState([])
+    const [coins, setCoins] = useState(0)
     const [current, setCurrent] = useState({});
 
     const [dolar, setDolar] = useState(0)
     const [tax, setTax] = useState(0)
     const [result, setResult] = useState(0)
 
-    const [cash, setCash] = useState()
-    const [creditCard, setCreditCard] = useState()
+    const [value, setValue] = useState()
 
     const history = useHistory();
 
+    const taxCash = parseFloat(1.1);
+    const taxCard = parseFloat(6.4);
+
+    //Chamada para a API
     const getCoins = useCallback(async () => {
         const response = await fetch('https://economia.awesomeapi.com.br/last/USD-BRL');
         const data = await response.json()
         setCoins(data.USDBRL)
     },[])
 
+    //Cálculo do valor final da compra em real(R$)
     const onSubmit = (e) =>{
         e.preventDefault();
 
-        if(cash) {
-            setResult((((parseFloat(dolar) + parseFloat(dolar *  parseFloat(tax / 100)))) * (parseFloat(coins.bid) + parseFloat(coins.bid * 0.011))).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }))
-        } else if(creditCard) {
-            setResult((((parseFloat(dolar) + parseFloat(dolar *  parseFloat(tax / 100))) * parseFloat(coins.bid))  + parseFloat(coins.bid * 0.064)).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }))
+        if(value === "dinheiro") {
+            setResult((((parseFloat(dolar) + parseFloat(dolar *  parseFloat(tax / 100)))) * (parseFloat(coins.bid) + parseFloat(coins.bid * (taxCash / 100)))).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }))
+        } else if( value === "cartão") {
+            setResult((((parseFloat(dolar) + parseFloat(dolar *  parseFloat(tax / 100))) * parseFloat(coins.bid))  + parseFloat(coins.bid * (taxCard / 100))).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }))
         }
 
         history.push("/results")
     }
 
+    //Levar os dados de uma página para a outra
     const setCurrentResults = useCallback((current) => {
         setCurrent(current);
       }, []);
@@ -46,18 +51,19 @@ export const FetchProvider = ({children}) => {
             value={{
                 coins,
                 current,
-                setCash,
                 setDolar,
                 setTax,
                 result,
-                cash,
-                creditCard,
-                setCreditCard,
                 onSubmit,
                 setCurrentResults,
                 getCoins,
                 dolar,
-                tax
+                tax,
+                taxCash,
+                taxCard,
+                setResult,
+                value,
+                setValue,
             }}
             >
             {children}

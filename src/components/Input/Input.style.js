@@ -37,11 +37,13 @@ export const RadioBtnDiv = styled.div`
     margin: 20px;
 
         input{
-                margin-top: 16px;
+            margin-top: 16px;
+            
             }
 
         label{
             margin: 15px; 
             
         }
+
 `;

@@ -11,6 +11,7 @@ export const Btn = styled.button`
     font-size: 16px;
     display: flex;
     align-items: center;
+    cursor: pointer;
 
         p{
             margin: 7px;
