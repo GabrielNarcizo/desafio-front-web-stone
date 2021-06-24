@@ -1,4 +1,7 @@
 # Stone Currency
+
+![stone](https://user-images.githubusercontent.com/75431544/123343810-e443f880-d528-11eb-8ff3-7653c248dbdb.png)
+
 ## Introdução
 
 Construir uma aplicação de conversão de montante em DÓLAR para REAL utilizando ReactJs.
@@ -47,3 +50,8 @@ Instale todas as dependências do projeto com o comando `yarn install`
 Execute o script de start com `yarn start`, caso enfrente algum problema resete o cache `yarn start --reset-cache`
 
 - O servidor será aberto automaticamente na porta:3000, caso não aconteça acesse http://localhost:3000
+
+## Visualize o projeto
+
+![image](https://user-images.githubusercontent.com/75431544/123344056-70562000-d529-11eb-95a2-5cd39d6fd4dc.png) ![image](https://user-images.githubusercontent.com/75431544/123344200-c034e700-d529-11eb-9d20-fc1d14cd6782.png)
+
