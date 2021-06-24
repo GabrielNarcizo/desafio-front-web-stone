@@ -37,6 +37,7 @@ Tenha em sua máquina:
 #### Passos para rodar o projeto
 
 - ️Clone do repositório (ou faça um fork se preferir)
+
 $ git clone https://github.com/GabrielNarcizo/desafio-front-web-stone
 
 - Instale as dependências
