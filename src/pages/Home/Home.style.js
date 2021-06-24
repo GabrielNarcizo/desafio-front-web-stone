@@ -20,7 +20,6 @@ export const Container = styled.div`
         font-style: normal;
         font-size: 18px;
     }
-
 `;
 
 export const Logo = styled.img`

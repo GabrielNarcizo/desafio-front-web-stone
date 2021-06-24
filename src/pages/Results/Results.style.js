@@ -16,6 +16,11 @@ export const Container = styled.div`
     }
 `
 
+export const DivLogo = styled.div`
+    display: flex;
+    align-items: center;
+`
+
 export const DivResults = styled.div`
     margin-left: 125px;
     padding: 20px 15px;
