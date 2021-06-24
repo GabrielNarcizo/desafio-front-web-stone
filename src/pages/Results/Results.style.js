@@ -12,6 +12,7 @@ export const Container = styled.div`
     }
     p{
         margin-top: 10px;
+        opacity: 0.5;
     }
 `
 
@@ -32,6 +33,7 @@ export const DivResults = styled.div`
         border: 1px solid #D7E0EB;
         font-size: 20px;
         font-weight: bold;
+        cursor: pointer;
 
         p{
             margin: 7px;
