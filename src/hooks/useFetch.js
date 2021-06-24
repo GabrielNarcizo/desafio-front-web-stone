@@ -42,9 +42,9 @@ export const FetchProvider = ({children}) => {
 
         e.preventDefault();
 
-        if( value === '1.1') {
+        if( value === 1.1) {
            setResult(calcCashResult)
-        } else if( value === '6.4') {
+        } else if( value === 6.4) {
            setResult(calcCardResult)
         }
 

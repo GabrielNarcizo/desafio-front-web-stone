@@ -37,7 +37,8 @@ const Input = () => {
                     value={1.1}
                     onChange={ e => setValue(e.target.value)}
                     name="option"
-                    id={setId("dinheiro")} required/> 
+                    id = {setId("dinheiro")} 
+                    required/> 
                     <label htmlFor="dinheiro">
                     Dinheiro
                     </label>
@@ -46,7 +47,8 @@ const Input = () => {
                     value= {6.4} 
                     onClick={ e => setValue(e.target.value)}
                     name="option" 
-                    id={setId("cartão")} required/>
+                    id={setId("cartão")} 
+                    required/>
                     <label htmlFor="cartão"> 
                     Cartão
                     </label>
