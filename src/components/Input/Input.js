@@ -21,11 +21,11 @@ const Input = () => {
                 <div>
                 <Label htmlFor="dolar">
                     <p>Dólar</p>
-                    <InputStyle type="number" name="dolar" id="dolar" placeholder="$ 1.00" onChange={ e => setDolar(e.target.value)}/>
+                    <InputStyle type="number" name="dolar" id="dolar" min="0" placeholder="$ 1.00" onChange={ e => setDolar(e.target.value)} required/>
                 </Label>
                 <Label htmlFor="tax">
                     <p>Taxa do Estado</p>
-                    <InputStyle type="number" name="tax" id="tax" placeholder="0%" step="0.01" min="0" onChange={e => setTax(e.target.value.replace(",", "."))}/>
+                    <InputStyle type="number" name="tax" id="tax" placeholder="0%" step="0.01" min="0" onChange={e => setTax(e.target.value.replace(",", "."))} required/>
                 </Label>
                 </div>
                 
@@ -37,7 +37,7 @@ const Input = () => {
                     value={1.1}
                     onChange={ e => setValue(e.target.value)}
                     name="option"
-                    id={setId("dinheiro")}/> 
+                    id={setId("dinheiro")} required/> 
                     <label htmlFor="dinheiro">
                     Dinheiro
                     </label>
@@ -46,7 +46,7 @@ const Input = () => {
                     value= {6.4} 
                     onClick={ e => setValue(e.target.value)}
                     name="option" 
-                    id={setId("cartão")}/>
+                    id={setId("cartão")} required/>
                     <label htmlFor="cartão"> 
                     Cartão
                     </label>
