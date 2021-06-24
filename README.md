@@ -53,5 +53,4 @@ Execute o script de start com `yarn start`, caso enfrente algum problema resete 
 
 ## Visualize o projeto
 
-![image](https://user-images.githubusercontent.com/75431544/123344056-70562000-d529-11eb-95a2-5cd39d6fd4dc.png) ![image](https://user-images.githubusercontent.com/75431544/123344200-c034e700-d529-11eb-9d20-fc1d14cd6782.png)
-
+![image](https://user-images.githubusercontent.com/75431544/123344056-70562000-d529-11eb-95a2-5cd39d6fd4dc.png) 
