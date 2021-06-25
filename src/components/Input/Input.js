@@ -21,7 +21,7 @@ const Input = () => {
                 <div>
                 <Label htmlFor="dolar">
                     <p>Dólar</p>
-                    <InputStyle type="number" name="dolar" id="dolar" min="0" placeholder="$ 1.00" onChange={ e => setDolar(e.target.value)} required/>
+                    <InputStyle type="number" name="dolar" id="dolar" min="0" step="0.01" placeholder="$ 1.00" onChange={ e => setDolar(e.target.value)} required/>
                 </Label>
                 <Label htmlFor="tax">
                     <p>Taxa do Estado</p>
@@ -34,20 +34,20 @@ const Input = () => {
                     <div>
                     <input 
                     type="radio" 
-                    value={1.1}
+                    value='1.1'
                     onChange={ e => setValue(e.target.value)}
                     name="option"
-                    id = {setId("dinheiro")} 
+                    id = "dinheiro"
                     required/> 
                     <label htmlFor="dinheiro">
                     Dinheiro
                     </label>
                     <input 
                     type="radio"
-                    value= {6.4} 
+                    value= '6.4' 
                     onClick={ e => setValue(e.target.value)}
                     name="option" 
-                    id={setId("cartão")} 
+                    id="cartão"
                     required/>
                     <label htmlFor="cartão"> 
                     Cartão

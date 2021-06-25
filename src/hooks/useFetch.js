@@ -17,18 +17,18 @@ export const FetchProvider = ({children}) => {
 
     const history = useHistory();
 
-    const bidDolar = coins.bid
+    const bidDolar = parseFloat(coins.bid)
 
     //Cálculo do valor final da compra em real(R$)
-    const taxState = parseFloat((dolar * tax) / 100)
-    const taxIOF = parseFloat((bidDolar * value) / 100)
+    const taxState = ((dolar * tax) / 100)
+    const taxIOF = (parseFloat(bidDolar * value) / 100)
     const calcCash = (parseFloat(dolar) + parseFloat(taxState))
     const calcCash2 = (parseFloat(bidDolar) + parseFloat(taxIOF))
-    const calcCashResult = (calcCash * calcCash2).toFixed(2)
+    const calcCashResult = (parseFloat(calcCash) * parseFloat(calcCash2)).toFixed(2)
 
     const calcCard = ((parseFloat(dolar) + parseFloat(taxState)) * parseFloat(bidDolar))
     const calcCard2 = parseFloat(taxIOF)
-    const calcCardResult = (calcCard + calcCard2).toFixed(2)
+    const calcCardResult = (parseFloat(calcCard) + parseFloat(calcCard2)).toFixed(2)
 
     //Chamada para a API
     const getCoins = useCallback(async () => {
@@ -42,12 +42,11 @@ export const FetchProvider = ({children}) => {
 
         e.preventDefault();
 
-        if( value === 1.1) {
+        if( value === '1.1') {
            setResult(calcCashResult)
-        } else if( value === 6.4) {
+        } else if( value === '6.4') {
            setResult(calcCardResult)
         }
-
         history.push("/results")
     }
 
