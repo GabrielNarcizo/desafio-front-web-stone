@@ -41,12 +41,14 @@ Tenha em sua máquina:
 
 - ️Clone do repositório (ou faça um fork se preferir)
 
-$ git clone https://github.com/GabrielNarcizo/desafio-front-web-stone
+ $ git clone https://github.com/GabrielNarcizo/desafio-front-web-stone
 
 - Instale as dependências
+
 Instale todas as dependências do projeto com o comando `yarn install`
 
 - Agora execute a aplicação
+
 Execute o script de start com `yarn start`, caso enfrente algum problema resete o cache `yarn start --reset-cache`
 
 - O servidor será aberto automaticamente na porta:3000, caso não aconteça acesse http://localhost:3000
