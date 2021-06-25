@@ -2,6 +2,8 @@
 
 ![stone](https://user-images.githubusercontent.com/75431544/123343810-e443f880-d528-11eb-8ff3-7653c248dbdb.png)
 
+#### Aplicação online em: https://currency-stone.netlify.app/
+
 ## Introdução
 
 Construir uma aplicação de conversão de montante em DÓLAR para REAL utilizando ReactJs.
