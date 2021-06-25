@@ -57,5 +57,7 @@ Execute o script de start com `yarn start`, caso enfrente algum problema resete 
 
 ## Responsividade
 
-![image](https://user-images.githubusercontent.com/75431544/123354954-0e9eb180-d53b-11eb-8797-b67ac4fc73b3.png) ![image](https://user-images.githubusercontent.com/75431544/123355057-3e4db980-d53b-11eb-89b1-14d41d2ec532.png)
+![image](https://user-images.githubusercontent.com/75431544/123354954-0e9eb180-d53b-11eb-8797-b67ac4fc73b3.png) 
+
+![image](https://user-images.githubusercontent.com/75431544/123355057-3e4db980-d53b-11eb-89b1-14d41d2ec532.png)
 
