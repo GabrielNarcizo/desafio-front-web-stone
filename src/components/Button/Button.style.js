@@ -16,4 +16,9 @@ export const Btn = styled.button`
         p{
             margin: 7px;
         }
+
+        @media screen and (max-width: 768px){
+        margin-left: 130px;
+
+    }
 `

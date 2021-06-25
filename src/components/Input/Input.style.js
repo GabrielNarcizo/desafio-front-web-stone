@@ -6,18 +6,27 @@ export const Div = styled.div`
     
         p {
                 font-weight: bold;
+
             }
 
     form{
         
-        margin: 20px 126px;
+        margin: 20px 50px;
             p {
                 margin: 10px 0;
+                font-size: 20px;
             }
 
             div{
                 display: flex;
-                
+        
+                @media screen and (max-width: 768px){
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+            }
         }
     }
 `

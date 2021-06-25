@@ -12,7 +12,7 @@ export const Container = styled.div`
     }
     p{
         margin-top: 10px;
-        opacity: 0.5;
+        opacity: 0.5; 
     }
 `
 
