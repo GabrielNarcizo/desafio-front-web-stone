@@ -13,7 +13,6 @@ export const FetchProvider = ({children}) => {
     const [result, setResult] = useState(0)
 
     const [value, setValue] = useState(0)
-    const [id, setId] = useState("")
 
     const history = useHistory();
 
@@ -76,7 +75,6 @@ export const FetchProvider = ({children}) => {
                 value,
                 setValue,
                 bidDolar,
-                id
             }}
             >
             {children}
