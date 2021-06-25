@@ -20,12 +20,14 @@ export const FetchProvider = ({children}) => {
     const bidDolar = parseFloat(coins.bid)
 
     //Cálculo do valor final da compra em real(R$)
+    //Cálculo em dinheiro
     const taxState = ((dolar * tax) / 100)
     const taxIOF = (parseFloat(bidDolar * value) / 100)
     const calcCash = (parseFloat(dolar) + parseFloat(taxState))
     const calcCash2 = (parseFloat(bidDolar) + parseFloat(taxIOF))
     const calcCashResult = (parseFloat(calcCash) * parseFloat(calcCash2)).toFixed(2)
 
+    //Cálculo em cartão
     const calcCard = ((parseFloat(dolar) + parseFloat(taxState)) * parseFloat(bidDolar))
     const calcCard2 = parseFloat(taxIOF)
     const calcCardResult = (parseFloat(calcCard) + parseFloat(calcCard2)).toFixed(2)
@@ -73,7 +75,6 @@ export const FetchProvider = ({children}) => {
                 setResult,
                 value,
                 setValue,
-                setId,
                 bidDolar,
                 id
             }}

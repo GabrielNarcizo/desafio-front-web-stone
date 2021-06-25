@@ -7,7 +7,7 @@ import { BsArrowLeftRight } from "react-icons/bs";
 
 const Input = () => {
     
-    const {setDolar, getCoins, onSubmit, setTax, setValue, setId} = useFetch()
+    const {setDolar, getCoins, onSubmit, setTax, setValue} = useFetch()
     
 
     useEffect(() => {
